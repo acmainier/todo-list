@@ -4,8 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Todo List</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <p>Interactive Todo List</p>
+    <main class="container">
+      <h1>My Todo List</h1>
+
+      <section class="input-section">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Add a new task..."
+          autocomplete="off"
+        />
+        <button id="add-btn">Add</button>
+      </section>
+
+      <p id="error-message" class="error-message hidden"></p>
+
+      <ul id="task-list"></ul>
+    </main>
+
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
