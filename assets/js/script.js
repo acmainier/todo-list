@@ -10,16 +10,24 @@ function onClickBtn() {
   if (cleanTaskInput === "") {
     errorMessageEl.textContent = "That's an empty task, browski!";
     errorMessageEl.classList.remove("hidden");
+    taskInputEl.value = "";
   } else {
     errorMessageEl.classList.add("hidden");
     const newTaskEl = document.createElement("li");
     newTaskEl.classList.add("task-item");
 
-    const newTaskText = document.createElement("span");
-    newTaskText.classList.add("task-text");
-    newTaskText.textContent = cleanTaskInput;
+    const newTaskHTML = `<span class="task-text">${cleanTaskInput}</span>
+    <button class="delete-btn">Delete</button>`;
 
-    newTaskEl.appendChild(newTaskText);
+    newTaskEl.innerHTML = newTaskHTML;
+
+    const deleteBtn = newTaskEl.querySelector(".delete-btn");
+    deleteBtn.addEventListener("click", onClickDelete);
+
+    function onClickDelete() {
+      newTaskEl.remove();
+    }
+
     taskListEl.appendChild(newTaskEl);
 
     taskInputEl.value = "";
