@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -142,4 +144,11 @@ h1 {
   font-size: 1rem;
   background-color: #fffdf7;
   outline: none;
+}
+
+/* --- Task Error message --- */
+
+.task-error {
+  color: #c0392b;
+  font-size: 0.875rem;
 }

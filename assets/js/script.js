@@ -17,6 +17,7 @@ function onClickBtn() {
     newTaskEl.classList.add("task-item");
 
     const newTaskHTML = `<span class="task-text">${cleanTaskInput}</span>
+    <span class="task-error hidden"></span>
     <button class="delete-btn">Delete</button><button class="edit-btn">Edit</button>`;
 
     newTaskEl.innerHTML = newTaskHTML;
@@ -47,12 +48,13 @@ function onClickBtn() {
       } else {
         const editTaskTextEl = newTaskEl.querySelector(".edit-input");
         const editTaskText = editTaskTextEl.value.trim();
+        const taskErrorMessageEl = newTaskEl.querySelector(".task-error");
         if (editTaskText === "") {
-          errorMessageEl.textContent = "That's an empty task, browski!";
-          errorMessageEl.classList.remove("hidden");
+          taskErrorMessageEl.textContent = "Empty task makes me sad, dude!";
+          taskErrorMessageEl.classList.remove("hidden");
           return;
         }
-        errorMessageEl.classList.add("hidden");
+        taskErrorMessageEl.classList.add("hidden");
         currentTaskTextEl.textContent = editTaskText;
         editTaskTextEl.remove();
         currentTaskTextEl.style.display = "";
