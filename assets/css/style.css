@@ -82,7 +82,7 @@ h1 {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 /* --- Task list --- */
@@ -97,6 +97,7 @@ h1 {
 .task-item {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   background-color: #f5f0e8;
   border: 1px solid #c8e6e4;
@@ -149,6 +150,7 @@ h1 {
 /* --- Task Error message --- */
 
 .task-error {
+  flex-basis: 100%;
   color: #c0392b;
   font-size: 0.875rem;
 }

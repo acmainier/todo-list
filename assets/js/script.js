@@ -17,8 +17,8 @@ function onClickBtn() {
     newTaskEl.classList.add("task-item");
 
     const newTaskHTML = `<span class="task-text">${cleanTaskInput}</span>
-    <span class="task-error hidden"></span>
-    <button class="delete-btn">Delete</button><button class="edit-btn">Edit</button>`;
+    <button class="delete-btn">Delete</button><button class="edit-btn">Edit</button>
+    <span class="task-error hidden"></span>`;
 
     newTaskEl.innerHTML = newTaskHTML;
 
@@ -52,6 +52,7 @@ function onClickBtn() {
         if (editTaskText === "") {
           taskErrorMessageEl.textContent = "Empty task makes me sad, dude!";
           taskErrorMessageEl.classList.remove("hidden");
+          editTaskTextEl.value = currentTaskTextEl.textContent;
           return;
         }
         taskErrorMessageEl.classList.add("hidden");
